@@ -1,0 +1,401 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Giigl</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+  </head>
+  <body
+    class="text-gray-700 bg-white relative"
+    style="font-family: 'Raleway', sans-serif; background-color: #fbfbfb;"
+  >
+    <nav class="bg-white w-full">
+      <div
+        class="container mx-auto px-6 py-2 flex justify-between items-center"
+      >
+        <div class="inline-flex items-center w-2/5 justify-between">
+          <a class="font-bold text-2xl lg:text-4xl" href="#">
+            <img
+              src="https://cdn.glitch.com/fc746b64-fc1e-41f1-afb8-37bc798d936e%2Flogo.png?v=1588051967507"
+              class="h-16"
+            />
+          </a>
+          <!-- <div class="block lg:hidden">
+				<button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+					<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<title>Menu</title>
+					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+					</svg>
+				</button>
+				</div> -->
+          <!-- <div class="hidden lg:block flex justify-between">
+					<ul class="inline-flex">
+						<li>
+							<a class="px-8 py-4 hover:border-b-2 hover:border-gray-600 font-bold hidden" href="/">Home</a>
+						</li>
+						<li>
+							<a class="px-8 py-4 hover:text-gray-800 hidden" href="#">About</a>
+						</li>
+						<li>
+							<a class="px-8 py-4 hover:text-gray-800 hidden" href="#">Contact</a>
+						</li>
+						
+					</ul>
+					
+				</div> -->
+        </div>
+        <div>
+          <ul class="inline-flex">
+            <li class="border-r-2 border-gray-500 px-4 py-4">
+              <a
+                href="https://app.gii.gl/signin"
+                class="bg-gray-800 hover:bg-gray-700 sm:px-6 py-4 text-white cursor-pointer rounded-full px-2"
+                >Log in</a
+              >
+            </li>
+            <li class="px-4 py-4">
+              <a
+                href="https://app.gii.gl/register"
+                class="bg-blue-500 hover:bg-blue-400 sm:px-6 py-4 text-white cursor-pointer rounded-full px-1"
+                >Sign up</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Hero-->
+    <div
+      style="background: linear-gradient(90deg, #4299e1 0%, #2d3748 100%);position: relative;"
+      class="py-10 relative height-lg"
+    >
+      <div class="container mx-auto px-6">
+        <img
+          class="float-right ml-4 my-2 w-1/2"
+          src="https://cdn.glitch.com/fc746b64-fc1e-41f1-afb8-37bc798d936e%2Fhero.png?v=1588051926683"
+          height="400"
+        />
+        <div class="mr-4 my-2 w-full sm:w-7/12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-2 text-white">
+            Impress. Grow your business.
+          </h2>
+          <h3 class="text-xl sm:text-2xl mb-8 text-gray-200">
+            With fascinating links.
+          </h3>
+          <!-- <button
+					class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider"
+					>
+					Pre Order
+					</button> -->
+          <form class="flex mt-12 w-full sm:w-5/6" id="target-form">
+            <div
+              id="input-box"
+              class="relative bg-transparent my-2 flex-1 border-none py-0 px-0 flex items-center"
+            >
+              <input
+                id="input-url"
+                class="bg-gray-200 w-full py-4 pl-8 pr-12 focus:outline-none focus:shadow-outline focus:border-blue-400 focus:bg-white rounded-l-full rounded-r-none"
+                autofocus
+              />
+              <span
+                id="close-button"
+                class="hidden absolute text-white right-1 flex items-center text-gray-400 bg-gray-200 hover:bg-gray-400 cursor-pointer rounded-full px-1 py-1 focus:outline-none"
+              >
+                <img
+                  src="./x.svg"
+                  width="16px"
+                  class="opacity-75 shadow-lg"
+                  height="16px"
+                />
+              </span>
+            </div>
+            <input
+              type="submit"
+              class="cursor-pointer bg-gray-700 hover:bg-gray-600 text-white rounded-l-none rounded-r-full my-2 py-4 px-2 sm:px-8 shadow-lg flex-2 border-none "
+              value="SHORTEN"
+            />
+          </form>
+
+          <div id="result" class="hidden mt-8 w-full">
+            <div
+              id="success-log"
+              class="hidden px-4 py-2 bg-green-100 border border-green-400 text-green-700 font-semibold rounded-lg w-5/6"
+            >
+              <div class="flex justify-between items-center">
+                <span id="success-content"
+                  >Successfully! Shortened URL was copied to clipboard.</span
+                >
+                <span id="close-success-log" class="cursor-pointer">x</span>
+              </div>
+            </div>
+            <div
+              class="relative flex justify-between items-center bg-white rounded-full px-2 py-2 shadow-lg w-1/2 mt-1"
+            >
+              <div
+                class="hidden copied-message absolute right-0 top-0 w-auto float-right text-green-900 rounded py-1 px-5 bottom-full mb-2"
+              >
+                Copied!
+              </div>
+              <div
+                class="px-2 sm:px-4 py-2 text-gray-700 font-bold"
+                id="result-url"
+              >
+                <span id="url-host">gii.gl</span
+                ><span class="text-blue-400 font-bold" id="url-path"></span>
+              </div>
+              <button
+                class="text-gray-700 hover:bg-blue-200 rounded-full p-2 focus:outline-none"
+                id="copy-button"
+              >
+                <svg
+                  class="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    class="heroicon-ui"
+                    d="M17 7h2.25c.97 0 1.75.78 1.75 1.75v10.5c0 .97-.78 1.75-1.75 1.75H8.75C7.78 21 7 20.22 7 19.25V17H4.75C3.78 17 3 16.22 3 15.25V4.75C3 3.78 3.78 3 4.75 3h10.5c.97 0 1.75.78 1.75 1.75V7zm-2 0V5H5v10h2V8.75C7 7.78 7.78 7 8.75 7H15zM9 9v10h10V9H9z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="error-log"
+            class="hidden px-4 py-2 bg-red-100 border border-red-400 text-red-700 font-semibold rounded-lg w-5/6"
+          >
+            <div class="flex justify-between items-center">
+              <span id="error-content">That's not a valid URL!</span>
+              <span id="close-error-log" class="cursor-pointer">x</span>
+            </div>
+          </div>
+
+          <!-- <div class="mt-12 text-white text-lg">
+						Make your links shorter, more safely with backups link and geopreferences routing!
+					</div> -->
+          <div class="mt-12 text-white text-lg">
+            Check this out.&nbsp;
+            <a class="text-orange-400 font-bold" href="https://app.gii.gl/login"
+              >Sign in&nbsp;</a
+            >
+            or
+            <a
+              class="text-orange-400 font-bold"
+              href="https://app.gii.gl/register"
+              >Create new account</a
+            >&nbsp;now!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal opacity-0 z-10 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"
+    >
+      <div
+        class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"
+      ></div>
+
+      <div
+        class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto"
+      >
+        <div
+          class="px-6 py-4 flex justify-between items-center bg-blue-500 w-full text-white"
+        >
+          <span class="font-bold text-base uppercase feedback-title"
+            >Send us your feedback</span
+          >
+          <i
+            aria-label="icon: close"
+            tabindex="-1"
+            class="anticon anticon-close fill-current cursor-pointer modal-close"
+          >
+            <svg
+              viewBox="64 64 896 896"
+              focusable="false"
+              class=""
+              data-icon="close"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+              ></path>
+            </svg>
+          </i>
+        </div>
+        <div class="modal-main w-full">
+          <div class="p-6 feedback-form">
+            <div class="normal-text">Did you achieve your goal?</div>
+            <div class="mt-2 flex justify-between">
+              <button
+                class="yes-button w-30 py-4 px-2 bg-white normal-text border-2 border-gray-400"
+                style="width: 30%;"
+              >
+                Yes
+              </button>
+              <button
+                class="partial-button w-30 py-4 px-2 bg-white normal-text border-2 border-gray-400"
+                style="width: 30%;"
+              >
+                Partial
+              </button>
+              <button
+                class="no-button w-30 py-4 px-2 bg-white normal-text border-2 border-gray-400"
+                style="width: 30%;"
+              >
+                No
+              </button>
+            </div>
+            <div class="mt-6 normal-text">
+              Do you have any suggestions to make Giigl better?
+            </div>
+            <textarea
+              id="feedback"
+              class="mt-2 border-2 border-gray-400 text-sm normal-text w-full focus:border-blue-500 focus:outline-none"
+              rows="5"
+              placeholder="Give us some advices."
+            >
+            </textarea>
+            <div class="mt-6 flex justify-center">
+              <button
+                class="w-30 bg-blue-500 px-6 py-2 text-white font-bold submit-feedback-button"
+              >
+                Send
+              </button>
+            </div>
+          </div>
+          <div class="p-6 thanks-form hidden">
+            <div class="modal-main w-full">
+              <div class="p-8 flex flex-col items-center animated bounceIn">
+                <img src="./thank-you.png" alt="" class="h-32" />
+                <div class="primary-text mt-4 text-3xl font-bold">
+                  Thank you!
+                </div>
+                <div class="normal-text mt-2 px-4 text-center">
+                  We have received your feedback. We will consider and try our
+                  best to improve your experiences!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="modal-open fixed bottom-0 right-0 mr-2 mb-2 normal-text border-3 rounded-full p-4 sm:p-4 bg-blue-500 text-white hover:bg-white hover:bg-blue-300 border-gray-800 outline-none focus:outline-none shadow-lg cursor-pointer"
+    >
+      <i aria-label="icon: mail" class="anticon anticon-mail fill-current"
+        ><svg
+          viewBox="64 64 896 896"
+          focusable="false"
+          class=""
+          data-icon="mail"
+          width="1.5em"
+          height="1.5em"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z"
+          ></path></svg
+      ></i>
+    </button>
+
+    <div class="features mt-12 mx-12 mb-12 text-center">
+      <p class="w-full mt-20 text-blue-400" style=" font-size: 20px;">
+        What makes Giigl so powerful?
+      </p>
+      <h2
+        style="letter-spacing: 3px;"
+        class="mt-2 font-bold text-blue-700 text-6xl"
+      >
+        Our Features
+      </h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-12 text-blue-400"
+      >
+        <div
+          class="bg-white border shadow rounded transition duration-500 ease-in-out transform hover:-translate-y-5 hover:scale-110 sm:hover:scale-105 mb-6"
+        >
+          <div class="feature-box my-6 mx-10">
+            <div class="feature-logo">
+              <i class="ion ion-link text-6xl"></i>
+            </div>
+            <div
+              class="feature-title h-10 mt-5 uppercase font-bold text-xl tracking-wide text-blue-700"
+            >
+              Shorten links
+            </div>
+            <div class="feature-desciption mt-5 lg:px-5">
+              You only need an unique Giigl link to represent for others. All in
+              one, so easy to use!
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white border shadow rounded transition duration-500 ease-in-out transform hover:-translate-y-5 hover:scale-110 sm:hover:scale-105 mb-6"
+        >
+          <div class="feature-box my-6 mx-10">
+            <div class="feature-logo">
+              <i class="ion ion-bookmark text-6xl"></i>
+            </div>
+            <div
+              class="feature-title h-10 mt-5 uppercase font-bold text-xl tracking-wide text-blue-700"
+            >
+              Backup Links
+            </div>
+            <div class="feature-desciption mt-5 lg:px-5">
+              We make sure your links are always safe and check regularly.
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white border shadow rounded transition duration-500 ease-in-out transform hover:-translate-y-5 hover:scale-110 sm:hover:scale-105 mb-6"
+        >
+          <div class="feature-box my-6 mx-10">
+            <div class="feature-logo">
+              <i class="ion ion-ios-world text-6xl"></i>
+            </div>
+            <div
+              class="feature-title h-10 mt-5 uppercase font-bold text-xl tracking-wide text-blue-700"
+            >
+              Geolocation Routing
+            </div>
+            <div class="feature-desciption mt-5 lg:px-5">
+              Customize your links to appropriate different countries.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="mt-12">
+      <div class="w-full flex items-center justify-start px-4 py-4">
+        <span class="text-sm tracking-wide"
+          >Copyright &#169; 2020 Giigl. All rights reserved.</span
+        >
+      </div>
+    </footer>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../scripts.js"></script>
+</html>
